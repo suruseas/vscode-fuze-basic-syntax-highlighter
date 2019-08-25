@@ -1,0 +1,131 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "FUZE BASIC",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#commands"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#supports"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.double.fuze",
+				"begin": "\"",
+				"end": "\""
+			}]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.fuze",
+					"match": "//.*$"
+				},
+				{
+					"name": "comment.line.remerk.fuze",
+					"match": "^(REM).*$"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.fuze",
+				"match": "\\b(IF|ELSE|THEN|ENDIF|SWITCH|ENDSWITCH|CASE|DEFAULT|ENDCASE|WHILE|UNTIL|CYCLE|FOR|REPEAT|GOTO|LOOP|END)\\b"
+			}]
+		},
+		"commands": {
+			"patterns": [
+				{
+					"name": "storage.type.fuze",
+					"match": "\\b(CLEAR|CLS|CONT|CONTINUE|DIR|EDIT|EXIT|LIST|LOAD|NEW|RUN|SAVE|VERSION)\\b"
+				},
+				{
+					"name": "storage.type.fuze",
+					"match": "\\b(CLS2)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.fuze", 
+				"match": "(=|<|>)"
+			}]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "storage.type.fuze",
+					"match": "\\b(ABS|ACOS|ADVANCESPRITE|ARMBODY|ARMELBOW|ARMGRIPPER|ARMLIGHT|ARMRESET|ARMSHOULDER|ARMWRIST|ASC|ASIN|ATAN|BREAK|CHR$|CIRCLE|CLEARKEYBOARD|CLOCK|CLOSE|CLS|COLOUR|COPYREGION|COS|DATA|DATE$|DEFCHAR|DEG|DIGITALREAD|DIGITALWRITE|DIM|DRCANALOGREAD|DRCCLOSE|DRCDIGITALREAD|DRCDIGITALWRITE|DRCOPEN|DRCPINMODE|DRCPWMWRITE|ELLIPSE|ENVELOPE|EOF|EXP|FADEOFF|FADEON|FFWD|FONTSCALE|FOR|FREEIMAGE|GETIMAGEH|GETIMAGEW|GETMOUSE|GETPIXEL|GETPIXELRGB|GETSPRITEH|GETSPRITEW|GRABREGION|HIDESPRITE|HLINE|HTAB|HVTAB|IF|THEN|INKEY|INPUT|INPUT#|INT|LEFT|LEFT$|LEN|LINE|LINETO|LOADIMAGE|LOADMUSIC|LOADSAMPLE|LOADSPRITE|LOCAL|LOG|MAX|MID$|MIN|MOUSEOFF|MOUSEON|MOVE|MOVETO|NEWSPRITE|NUMFORMAT|OPEN|ORIGIN|PAUSECHAN|PAUSEMUSIC|PENDOWN|PENUP|PINMODE|PLAYMUSIC|PLAYSAMPLE|PLOT|PLOTIMAGE|PLOTSPRITE|POLYEND|POLYPLOT|POLYSTART|PRINT|PRINT#|PRINTAT|PWMWRITE|RAD|READ|RECT|RESTORE|RESUMECHAN|RESUMEMUSIC|REWIND|RGBCOLOUR|RIGHT|RIGHT$|RND|SAVEREGION|SAVESCREEN|SCANKEYBOARD|SCLOSE|SCROLLDOWN|SCROLLLEFT|SCROLLRIGHT|SCROLLUP|SEEK|SETCHANVOL|SETMODE|SETMOUSE|SETMUSICVOL|SETSPRITEALPHA|SETSPRITEANGLE|SETSPRITEFLIP|SETSPRITESIZE|SETSPRITETRANS|SGET|SGET$|SGN|SHOWKEYS|SIN|SOFTPWMWRITE|SOPEN|SOUND|SPACE$|SPRITECOLLIDE|SPRITECOLLIDEPP|SPRITEOUT|SPUT|SPUT$|SQRT|SREADY|STOP|STOPCHAN|STOPMUSIC|STR$|SWAP|SWITCH|TAN|TONE|TRIANGLE|UPDATE|VAL|VLINE|VTAB|WAIT)\\b"
+				},
+				{
+					"name": "storage.type.fuze",
+					"match": "\\b(RANDOM)\\b"
+				}				
+			]
+		},
+		"supports": {
+			"patterns": [
+				{
+					"match": "\\b((FN|PROC)\\s+[a-zA-Z][a-zA-Z0-9]*)\\s*\\(?",
+					"captures": {
+						"1": {
+							"name": "support.function.fuze"
+						}
+					}
+				},
+				{
+					"name": "support.function.fuze",
+					"match": "\\b(DEF|FN|PROC|ENDPROC)\\b"
+				}	
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.fuze",
+					"match": "\\b(-?[0-9]+)\\b"
+				},
+				{
+					"name": "constant.language.fuze",
+					"match": "\\b(TRUE|FALSE|PI)\\b"
+				},
+				{
+					"name": "constant.other.fuze",
+					"match": "\\b(BLACK|NAVY|GREEN|TEAL|MAROON|PURPLE|OLIVE|SILVER|GREY|BLUE|LIME|AQUA|RED|PINK|YELLOW|WHITE)\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns":[
+				{
+					"name": "variable.language.fuze",
+					"match": "\\b(COLOR|EDITCOLS|FADING|FONTSIZE|GET|GET$|GHEIGHT|GWIDTH|INK|MOUSEX|MOUSEY|PAPER|SEED|TANGLE|THEIGHT|TIME|TIME$|TWIDTH|UPDATEMODE)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.fuze"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "fuze",
+    "displayName": "FUSE BASIC",
+    "description": "Language Support for FUZE BASIC",
+    "version": "0.0.1",
+    "publisher": "YukihiroAmadatsu",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fuze",
+            "aliases": ["FUZE BASIC", "fuze"],
+            "extensions": [".text", ".fuze"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fuze",
+            "scopeName": "source.fuze",
+            "path": "./syntaxes/fuze.tmLanguage.json"
+        }]
+    }
+}
