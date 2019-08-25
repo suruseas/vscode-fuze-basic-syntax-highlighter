@@ -22,5 +22,8 @@
             "scopeName": "source.fuze",
             "path": "./syntaxes/fuze.tmLanguage.json"
         }]
-    }
+    },
+    "repository": {
+		"url": "https://github.com/suruseas/vscode-fuze-basic-syntax-highlighter"
+	}
 }
